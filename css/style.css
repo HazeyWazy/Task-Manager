@@ -1,0 +1,652 @@
+/* 
+Name: Htet Yamin Ei;
+StudentID: 47743220;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=El+Messiri:wght@400..700&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Mukta", sans-serif;
+    color: #2e323d;
+    background-color: #faf9ff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h2 {
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    letter-spacing: 0.15px;
+}
+
+h3 {
+    font-family: "El Messiri", sans-serif;
+    font-optical-sizing: auto;
+}
+
+dl {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+dt {
+    font-weight: 600;
+}
+
+/******************************** header ********************************/
+
+header {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    background-color: #2e323d;
+    color: #faf9ff;
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 1;
+}
+
+header > h2 {
+    padding: 0 1rem;
+    margin: 1rem 0;
+    margin-right: auto;
+}
+
+/******************************** list-items ********************************/
+
+nav {
+    padding: 0 1rem;
+}
+
+header nav ul {
+    padding: 0;
+}
+
+header nav ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #faf9ff;
+    padding: 0.1vw 0.6vw;
+    margin: auto auto;
+    transition-duration: 0.4s;
+    background-color: #2e323d;
+}
+
+header nav ul li a:hover {
+    text-decoration: none;
+    color: #62ECBC;
+    padding: 0.1vw 0.6vw;
+    margin: auto auto;
+    transition-duration: 0.4s;
+    border-bottom: solid 1px #62ECBC;
+}
+
+#current > a {
+    text-decoration: none;
+    color: #0FB387;
+    padding: 0.1vw 0.6vw;
+    margin: auto auto;
+    transition-duration: 0.4s;
+    border-bottom: solid 1px #0FB387;
+}
+
+/******************************** search ********************************/
+
+search {
+    padding: 0 1rem;
+}
+
+#tasksearch {
+    color: #2e323d;
+    background-color: #faf9ff;
+    box-shadow: 0 0 .4vw rgba(0, 0, 0, 0.5), 0 0 0 .15vw transparent;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+    padding: 0.4vw;
+    max-width: 190px;
+    transition: 0.4s;
+}
+
+#tasksearch:hover {
+    box-shadow: 0 0 0 0.15vw #717788;
+}
+
+#tasksearch:focus {
+    box-shadow: 0 0 0 0.15vw #5072a9;
+}
+
+/******************************** div user ********************************/
+
+#user {
+    padding: 0 1rem;
+    display: flex;
+    background: 0 50% / 18% no-repeat url("bob.png");
+}
+
+#user > p {
+    font-size: small;
+    padding-right: 1rem;
+    padding-left: 2.25rem;
+}
+
+#username {
+    font-size: medium;
+    display: block;
+}
+
+header button {
+    margin: auto auto;
+    padding: 0.4vw 0.6vw;
+    border-radius: 0.4vw;
+    transition-duration: 0.4s;
+    background-color: #2e323d;
+    color: #faf9ff;
+    border: solid 1px #faf9ff;
+}
+
+header button:hover {
+    cursor: pointer;
+    background-color: #faf9ff;
+    color: #2e323d;
+    border: solid 1px #2e323d;
+    box-shadow: 0 0 0 0.15vw #717788;
+}
+
+header button:active {
+    cursor: pointer;
+    background-color: #faf9ff;
+    color: #2e323d;
+    border: solid 1px #2e323d;
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+/******************************** task manager ********************************/
+
+#task-manager {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.task-board {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.task-board:last-child {
+    min-width: 280px;
+}
+
+.task-board > h2 {
+    cursor: default;
+}
+
+.task-card {
+    cursor: default;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid rgb(46, 50, 61, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/******************************** to-do task-card color and hover effect ********************************/
+
+.task-board:first-child .task-card:nth-child(2),
+.task-board:nth-child(3) .task-card:last-child {
+    background: radial-gradient(178% 106% at 26% 106%, #ccffdc 0%, rgba(255, 255, 255, 0) 71%), #effff4;
+}
+
+.task-board:first-child .task-card:nth-child(2):hover,
+.task-board:nth-child(3) .task-card:last-child:hover {
+    box-shadow: 0 0 20px rgba(107, 172, 89, 0.6);
+    border-color: #54ac3c;
+    transform: scale(1.05);
+}
+
+.task-board:first-child .task-card:nth-child(3) {
+    background: radial-gradient(178% 106% at 26% 106%, #ffdccc 0%, rgba(255, 255, 255, 0) 71%), #fff5ee;
+}
+
+.task-board:first-child .task-card:nth-child(3):hover {
+    box-shadow: 0 0 20px rgba(248, 116, 92, 0.6);
+    border-color: #f8745c;
+    transform: scale(1.05);
+}
+
+.task-board:first-child .task-card:nth-child(4),
+.task-board:nth-child(3) .task-card:nth-last-child(2) {
+    background: radial-gradient(178% 106% at 26% 106%, #c6d8fc 0%, rgba(255, 255, 255, 0) 71%), #ecf2fe;
+}
+
+.task-board:first-child .task-card:nth-child(4):hover,
+.task-board:nth-child(3) .task-card:nth-last-child(2):hover {
+    box-shadow: 0 0 20px rgba(9, 116, 241, 0.6);
+    border-color: #1f53b9;
+    transform: scale(1.05);
+}
+
+.task-board:first-child .task-card:nth-child(5),
+.task-board:nth-child(3) .task-card:nth-last-child(3) {
+    background: radial-gradient(178% 106% at 26% 106%, #ffccd4 0%, rgba(255, 255, 255, 0) 71%), #ffeded;
+}
+
+.task-board:first-child .task-card:nth-child(5):hover,
+.task-board:nth-child(3) .task-card:nth-last-child(3):hover {
+    box-shadow: 0 0 20px rgba(223, 33, 62, 0.6);
+    border-color: #e7324e;
+    transform: scale(1.05);
+}
+
+.task-board:first-child .task-card:nth-child(6),
+.task-board:nth-child(2) .task-card:nth-last-child(2) {
+    background: radial-gradient(178% 106% at 26% 106%, #dcccf4 0%, rgba(255, 255, 255, 0) 71%), #fcfafe;
+}
+
+.task-board:first-child .task-card:nth-child(6):hover,
+.task-board:nth-child(2) .task-card:nth-last-child(2):hover {
+    box-shadow: 0 0 20px rgba(184, 137, 255, 0.6);
+    border-color: #7e5ead;
+    transform: scale(1.05);
+}
+
+.task-board:nth-child(2) .task-card:last-child {
+    background: radial-gradient(178% 106% at 26% 106%, #fff7b1 0%, rgba(255, 255, 255, 0) 71%), #ffffff;
+}
+
+.task-board:nth-child(2) .task-card:last-child:hover {
+    box-shadow: 0 0 20px rgba(255, 247, 177, 0.8);
+    border-color: #f9b938;
+    transform: scale(1.05);
+}
+
+/******************************** task-card decorations ********************************/
+
+.task-due {
+    font-weight: 500;
+    padding: 0 8px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+}
+
+.task-board:first-child .task-due {
+    margin-left: auto;
+    margin-top: -30px;
+}
+
+.task-board:nth-child(2) .task-due {
+    margin-left: auto;
+    margin-top: -30px;
+}
+
+.task-board:last-child .task-due {
+    margin-left: auto;
+    margin-top: -30px;
+}
+
+.task-priority {
+    font-size: larger;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    justify-self: center;
+    margin-top: 10px;
+    margin-left: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+}
+
+/******************************** task-controls buttons ********************************/
+
+.task-controls {
+    margin-left: auto;
+    margin-top: -30px;
+}
+
+.task-controls > button {
+    width: 70px;
+    height: 30px;
+    color: #faf9ff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.4vw 0.6vw;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+
+.edit-button {
+    background-color: #387ef5;
+    margin-right: 5px;
+}
+
+.delete-button {
+    background-color: #f53d3d;
+}
+
+.edit-button:hover {
+    outline: 2px solid #387ef5;
+    background-color: #faf9ff;
+    color: #2e323d;
+}
+
+.delete-button:hover {
+    outline: 2px solid #f53d3d;
+    background-color: #faf9ff;
+    color: #2e323d;
+}
+
+.edit-button:active,
+.delete-button:active {
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+/******************************** widgets ********************************/
+
+#widgets {
+    display: flex;
+    flex-direction: column;
+}
+
+#widgets > div {
+    width: 300px;
+    cursor: default;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid rgb(46, 50, 61, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #faf9ff;    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/******************************** task-stats-widget ********************************/
+
+#task-stats-widget {
+    background: radial-gradient(178% 106% at 26% 106%, #ffdccc 0%, rgba(255, 255, 255, 0) 71%), #fff5ee;
+}
+
+div#task-stats-widget:hover {
+    box-shadow: 0 0 20px rgb(248, 116, 92, 0.6);
+    border-color: #f8745c;
+    transform: scale(1.05);
+}
+
+#task-stats-widget dt:first-child{
+    width: 30%;
+}
+
+#task-stats-widget dt:nth-child(3) {
+    width: 17%;
+}
+
+#task-stats-widget dt:nth-child(5) {
+    width: 18%;
+}
+
+#task-stats-widget dt:nth-child(7) {
+    width: 16.9%;
+}
+
+#task-stats-widget dd {
+    color: #faf9ff;
+    font-size: small;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+    margin-top: 3px;
+}
+
+#task-stats-widget dd:nth-child(2) {
+    background-color: #a6192e;
+    margin-right: 40px;
+}
+
+#task-stats-widget dd:nth-child(4) {
+    background-color: #0974f1;
+    margin-right: 40px;
+}
+
+#task-stats-widget dd:nth-child(6) {
+    background-color: #f8745c;
+    margin-right: 73px;
+}
+
+#task-stats-widget dd:nth-child(8) {
+    background-color: #6bac59;
+}
+
+/******************************** weather-widget ********************************/
+
+#weather-widget {
+    background: 90% 0 / 30% no-repeat url("partly.png"), radial-gradient(178% 106% at 26% 106%, #fff7b1 0%, rgba(255, 255, 255, 0) 71%), #ffffff;
+}
+
+#weather-widget dt {
+    width: 53%;
+}
+
+#weather-widget dt:first-child,
+#weather-widget dd:nth-child(2) {
+    margin-top: 15px;
+}
+
+div#weather-widget:hover {
+    box-shadow: 0 0 20px rgb(255, 247, 177, 0.8);
+    border-color: #f9b938;
+    transform: scale(1.05);
+}
+
+/******************************** this-week-widget ********************************/
+
+#this-week-widget > h3 {
+    background-color: #a6192e;
+    color: #faf9ff;
+    width: 111.9%;
+    margin-left: -16px;
+    margin-top: -15px;
+    border-radius: 8px 8px 0 0;
+    padding: 10px 15px 5px;
+}
+
+#this-week-widget ul {
+    padding-top: 6px;
+}
+
+#this-week-widget li {
+    list-style: inside;
+}
+
+#this-week-widget li::marker {
+    color: #a6192e;
+}
+
+div#this-week-widget:hover {
+    box-shadow: 0 0 20px rgba(166, 25, 46, 0.5);
+    border-color: #a6192e;
+    transform: scale(1.05);
+}
+
+/******************************** task-timer-widget ********************************/
+
+#task-timer-widget > h3 {
+    background-color: #5072a9;
+    color: #faf9ff;
+    width: 111.9%;
+    margin-left: -16px;
+    margin-top: -15px;
+    border-radius: 8px 8px 0 0;
+    padding: 10px 15px 5px;
+}
+
+#task-timer-remaining {
+    width: 95px;
+    height: 95px;
+    margin: 18px auto 0;
+    padding: 18px 20px 20px 29.5px;
+    font-size: xx-large;
+    line-height: 1;
+    border: 3px solid #5072a9;
+    border-radius: 50%;
+}
+
+#task-timer-units {
+    text-align: center;
+    padding: 50px 30px 30px;
+    position: relative;
+    bottom: 98px;
+    margin: 0 auto;
+}
+
+#task-timer-controls {
+    margin-top: -95px;
+    display: flex;
+}
+
+#task-timer-controls > button {
+    width: 70px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.4vw 0.6vw;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+
+#task-timer-stop {
+    background-color: #ff4538;
+    color: #faf9ff;
+}
+
+#task-timer-reset {
+    margin-left: 128px;
+    background-color: #333333;
+    color: #faf9ff;
+}
+
+#task-timer-stop:hover {
+    outline: 2px solid #ff4538;
+    background-color: transparent;
+    color: #2e323d;
+}
+
+#task-timer-reset:hover {
+    outline: 2px solid #333333;
+    background-color: transparent;
+    color: #2e323d;
+}
+
+#task-timer-stop:active,
+#task-timer-reset:active {
+    box-shadow: none;
+    transform: translateY(3px);
+}
+
+div#task-timer-widget:hover {
+    box-shadow: 0 0 20px rgba(9, 117, 241, 0.6);
+    border-color: #5072a9;
+    transform: scale(1.05);
+}
+
+/******************************** footer ********************************/
+
+footer {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: #2e323d;
+    color: #faf9ff;
+    padding: 20px;
+    font-size: small;
+}
+
+/******************************** responsive ********************************/
+
+@media screen and (max-width: 460px) {
+    header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav {
+        margin-right: auto;
+    }
+
+    search {
+        margin-left: auto;
+    }
+
+    #user {
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 1048px) {
+    .task-board:last-child {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .task-board:last-child > h2 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1292px) {
+    #task-manager {
+        justify-content: center;
+    }
+
+    #widgets {
+        flex-direction: row;
+        gap: 20px;
+        margin-bottom: 20px;  
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/******************************** reference for image ********************************/
+
+/*
+
+partly cloudy image: https://www.flaticon.com/free-icon/partly_6218498
+
+*/
